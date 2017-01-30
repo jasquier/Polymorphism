@@ -50,17 +50,17 @@ public class Main
 
     }
 
-    public static String promptForNumberOfPets()
+    /*default*/ static String promptForNumberOfPets()
     {
         return null;
     }
 
-    public static String promptForTypeOfPetUserHas()
+    /*default*/ static String promptForTypeOfPetUserHas()
     {
         return null;
     }
 
-    public static String promptForNameOfPetUserHas()
+    /*default*/ static String promptForNameOfPetUserHas()
     {
         return null;
     }

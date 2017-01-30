@@ -7,7 +7,7 @@ package io.zipcoder.pets;
  */
 public class Dog extends Pet
 {
-    public String speak()
+    public /*default*/ String speak()
     {
         return null;
     }

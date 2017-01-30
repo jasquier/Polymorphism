@@ -11,12 +11,12 @@ abstract public class Pet
 
     public Pet() {}
 
-    public String getName()
+    /*default*/ String getName()
     {
         return name;
     }
 
-    public void setName(String name)
+    /*default*/ void setName(String name)
     {
         this.name = name;
     }
@@ -26,5 +26,5 @@ abstract public class Pet
         return null;
     }
 
-    abstract public String speak();
+    abstract /*default*/ String speak();
 }
