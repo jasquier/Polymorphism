@@ -65,17 +65,17 @@ public class Main
         return null;
     }
 
-    public static int getNumberOfPetsUserHas()
+    private static int getNumberOfPetsUserHas()
     {
         return -1;
     }
 
-    public static String getTypeOfPetUserHas()
+    private static String getTypeOfPetUserHas()
     {
         return null;
     }
 
-    public static String getNameOfPetUserHas()
+    private static String getNameOfPetUserHas()
     {
         return null;
     }
