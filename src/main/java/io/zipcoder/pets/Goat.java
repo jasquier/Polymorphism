@@ -9,6 +9,6 @@ public class Goat extends Pet
 {
     public String speak()
     {
-        return null;
+        return "I'm a goat!";
     }
 }

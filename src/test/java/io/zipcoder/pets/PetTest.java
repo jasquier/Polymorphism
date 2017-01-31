@@ -44,7 +44,7 @@ public class PetTest
     @Test
     public void toStringTest()
     {
-        String expected = "My name is: Dewey.  I say \"Bork\'";
+        String expected = "My name is: Dewey.  I say \"Bork\"";
 
         String actual = dog.toString();
 

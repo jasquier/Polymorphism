@@ -1,5 +1,7 @@
 package io.zipcoder.pets;
 
+import java.util.Scanner;
+
 /**
  * @author John A. Squier
  * @author Michael Wolfe
@@ -7,6 +9,8 @@ package io.zipcoder.pets;
  */
 public class Main
 {
+    static Scanner kb = new Scanner(System.in);
+
     public static void main(String[] args)
     {
         // get number of pets user has
@@ -52,31 +56,33 @@ public class Main
 
     public static String promptForNumberOfPets()
     {
-        return null;
+        return "How many pets do you have?:";
     }
 
     public static String promptForTypeOfPetUserHas()
     {
-        return null;
+        return "What kind of animal is this pet?:";
     }
 
     public static String promptForNameOfPetUserHas()
     {
-        return null;
+        return "What is the name of this pet?:";
     }
 
     public static int getNumberOfPetsUserHas()
     {
-        return -1;
+        int x = kb.nextInt();
+        kb.nextLine();
+        return x;
     }
 
     public static String getTypeOfPetUserHas()
     {
-        return null;
+        return kb.nextLine();
     }
 
     public static String getNameOfPetUserHas()
     {
-        return null;
+        return kb.nextLine();
     }
 }

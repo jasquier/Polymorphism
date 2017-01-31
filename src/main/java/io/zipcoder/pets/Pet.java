@@ -23,7 +23,7 @@ abstract public class Pet
 
     public String toString()
     {
-        return null;
+        return "My name is: " + getName() + ".  I say \"" + speak() + "\"";
     }
 
     abstract public String speak();
