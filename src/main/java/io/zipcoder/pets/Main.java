@@ -1,82 +1,59 @@
 package io.zipcoder.pets;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @author John A. Squier
- * @author Michael Wolfe
- * A main class that Michael Wolfe will implement.
  */
 public class Main
 {
+    // scanner is a field so I don't have to pass it to the getInput methods
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args)
     {
-        // get number of pets user has
-        System.out.print(promptForNumberOfPets());
-        int numberOfPets = getNumberOfPetsUserHas();
+        CanCreatePets petFactory = new PetFactory();
+        List<Pet> list = new ArrayList<>();
 
-        // create an array to store user input
-        Pet[] userPets = new Pet[numberOfPets];
-        //String[] userInput = new String[numberOfPets*2]; // original implementation
+        System.out.println(Display.promptForNumberOfPets());
+        int numberOfPets = getNumberOfPets();
 
         for ( int i = 0; i < numberOfPets; i++ )
         {
-            System.out.print(promptForTypeOfPetUserHas());
+            System.out.println(Display.promptForTypeOfPet());
 
-            switch ( getTypeOfPetUserHas().toLowerCase() )
-            {
-                case "dog":
-                    userPets[i] = new Dog();
-                    break;
-                case "cat":
-                    userPets[i] = new Cat();
-                    break;
-                case "goat":
-                    userPets[i] = new Goat();
-                    break;
+            Pet pet = petFactory.createPet(getTypeOfPet());
 
-                // unknown pet types are dogs
-                default:
-                    userPets[i] = new Dog();
-            }
+            System.out.println(Display.promptForNameOfPet());
+            pet.setName(getNameOfPet());
 
-            System.out.print(promptForNameOfPetUserHas());
-            userPets[i].setName(getNameOfPetUserHas());
+            list.add(pet);
         }
 
-        // print out pets
-        for ( int i = 0; i < numberOfPets; i++ )
+        // print out pet info
+        for ( Pet p : list )
         {
-            System.out.println(userPets[i].toString());
+            System.out.println(Display.displayPetInfo(p));
         }
 
     }
 
-    public static String promptForNumberOfPets()
+    public static int getNumberOfPets()
     {
-        return null;
+        int x = scanner.nextInt();
+        scanner.nextLine();
+        return x;
     }
 
-    public static String promptForTypeOfPetUserHas()
+    public static String getTypeOfPet()
     {
-        return null;
+        return scanner.nextLine();
     }
 
-    public static String promptForNameOfPetUserHas()
+    public static String getNameOfPet()
     {
-        return null;
-    }
-
-    public static int getNumberOfPetsUserHas()
-    {
-        return -1;
-    }
-
-    public static String getTypeOfPetUserHas()
-    {
-        return null;
-    }
-
-    public static String getNameOfPetUserHas()
-    {
-        return null;
+        return scanner.nextLine();
     }
 }

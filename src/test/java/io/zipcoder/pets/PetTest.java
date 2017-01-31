@@ -6,7 +6,6 @@ import org.junit.Test;
 
 /**
  * @author John A. Squier
- * A test class for the Pet class that should indicate to Michael Wolfe how to implement Pet.
  */
 public class PetTest
 {
@@ -37,16 +36,6 @@ public class PetTest
 
         dog.setName("Spanky");
         String actual = dog.getName();
-
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void toStringTest()
-    {
-        String expected = "My name is: Dewey.  I say \"Bork\'";
-
-        String actual = dog.toString();
 
         Assert.assertEquals(expected, actual);
     }
