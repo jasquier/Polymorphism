@@ -40,19 +40,33 @@ public class Main
 
     }
 
-    public static int getNumberOfPets()
+    private static int getNumberOfPets()
     {
-        int x = scanner.nextInt();
+        int x;
+
+        do
+        {
+            x = scanner.nextInt();
+
+            if ( x < 0 )
+            {
+                System.out.println(Display.promptForNumberOfPets());
+            }
+        }
+        while ( x < 0 );
+
+        // clear the newline from the buffer
         scanner.nextLine();
+
         return x;
     }
 
-    public static String getTypeOfPet()
+    private static String getTypeOfPet()
     {
         return scanner.nextLine();
     }
 
-    public static String getNameOfPet()
+    private static String getNameOfPet()
     {
         return scanner.nextLine();
     }
